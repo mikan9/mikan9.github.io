@@ -385,8 +385,14 @@ header {
 }
 
 .portfolio {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.portfolio--container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
 }
 
 .portfolio__item {
