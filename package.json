@@ -1,0 +1,14 @@
+{
+    "name": "portfolio",
+    "version": "1.0.0",
+    "description": "Portfolio Project.",
+    "scripts": {
+        "lite": "lite-server",
+        "start": "npm run lite"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "lite-server": "^2.5.4"
+    }
+}
