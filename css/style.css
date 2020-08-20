@@ -283,7 +283,6 @@ header {
   }
   .nav {
     bottom: auto;
-    height: 4%;
     -webkit-transform: translateX(0);
             transform: translateX(0);
     border-bottom: 4px solid var(--clr-accent);
