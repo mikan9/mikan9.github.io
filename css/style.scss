@@ -16,6 +16,7 @@
 
     --clr-light: #D5D7CC;
     --clr-dark: #333333;
+    --clr-darker: #111;
     --clr-accent: #F69277;
 
     --fs-h1: 3rem;
@@ -63,7 +64,7 @@ strong {
 
 :focus {
     outline: 3px solid var(--clr-accent);
-    outline-offset: 3px;
+    outline-offset: 2px;
 }
 
 /* Buttons */
@@ -266,7 +267,7 @@ header {
     .nav {
         bottom: auto;
         transform: translateX(0);
-        border-bottom: 4px solid var(--clr-accent);
+        border-bottom: 5px solid var(--clr-accent);
     }
 
     .nav__list {
@@ -284,6 +285,31 @@ header {
         font-family: var(--ff-secondary);
         font-weight: var(--fw-reg);
         font-size: var(--fs-h3);
+    }
+
+    .nav__item a {
+        display: block;
+        text-align: center;
+
+    }
+
+    .nav__item a::before {
+        content: "";
+        height: 3px;
+        display: block;
+        border-top: 3px solid var(--clr-accent);
+        transition: .5s all ease-out;
+        transform: scaleX(0);
+    }
+
+    .nav__item a:focus {
+        outline: none;
+    }
+
+    .active a::before {
+        content: "";
+        display: block;
+        transform: scaleX(1);
     }
 }
 
@@ -443,10 +469,30 @@ header {
     text-align: center;
 }
 
+.my-work::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    left: 0;
+    margin-top: -5em;
+    border-right: 100px solid transparent;
+    border-top: 100px solid var(--clr-light);
+}
+
+.my-work::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    right: 0;
+    border-left: 100px solid transparent;
+    border-bottom: 100px solid var(--clr-darker);
+}
+
 .portfolio {
     width: 100%;
     display: flex;
     justify-content: center;
+    padding-bottom: 10rem;
 }
 
 .portfolio--container {
@@ -515,7 +561,7 @@ header {
 /* Footer */
 
 .footer {
-    background: #111;
+    background: var(--clr-darker);
     color: var(--clr-accent);
     text-align: center;
     padding: 2.5em 0;
