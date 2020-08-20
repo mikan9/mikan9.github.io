@@ -85,6 +85,15 @@ strong {
           transform: scale(1.1);
 }
 
+.view-site {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.view-site i {
+  margin-left: 5px;
+}
+
 /* Typography */
 h1,
 h2,
