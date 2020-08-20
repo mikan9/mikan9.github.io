@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap');
+
 *,
 *::before,
 *::after {
@@ -504,6 +507,8 @@ header {
     padding: 0 2em 2em;
     max-width: 1000px;
     margin: 0 auto;
+
+    font-family: var(--ff-secondary);
 }
 
 .portfolio-item-individual p {
