@@ -7,7 +7,7 @@
 
 :root {
   --ff-primary: 'Source Sans Pro', sans-serif;
-  --ff-secondary: 'Source Sans Pro'monospace;
+  --ff-secondary: 'PT Sans', monospace;
   --fw-reg: 300;
   --fw-bold: 900;
   --clr-light: #D5D7CC;
@@ -105,6 +105,7 @@ h3 {
 
 .section__title {
   margin-bottom: .25em;
+  font-family: var(--ff-secondary);
 }
 
 .section__title--intro {
@@ -318,7 +319,7 @@ header {
   background-color: var(--clr-dark);
   background-image: url(../img/lyricparser-background.png);
   background-size: cover;
-  /* background-blend-mode: multiply; */
+  background-blend-mode: overlay;
   color: var(--clr-light);
   text-align: center;
 }
@@ -328,23 +329,27 @@ header {
   position: relative;
 }
 
-.section__title--services::after {
-  content: '';
-  display: block;
-  width: 2em;
-  height: 1px;
-  margin: 0.5em auto 1em;
-  background: var(--clr-light);
-  opacity: 0.25;
+.hexagon {
+  background-image: url(../img/hexagon.svg);
+  background-size: contain;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 200px;
+  height: 200px;
+  justify-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
 }
 
-.services {
-  margin-bottom: 4em;
+.service__description {
+  font-family: var(--ff-secondary);
 }
 
-.service {
-  max-width: 500px;
-  margin: 0 auto;
+.hexagon i {
+  color: var(--clr-light);
+  margin: auto auto;
 }
 
 @media (min-width: 800px) {
@@ -352,12 +357,10 @@ header {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    max-width: 1000px;
+    max-width: calc(600px + 6rem);
+    gap: 3rem;
     margin-left: auto;
     margin-right: auto;
-  }
-  .services + .service {
-    margin-left: 2em;
   }
 }
 
