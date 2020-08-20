@@ -279,10 +279,34 @@ header {
 }
 
 @media (min-width: 600px) {
+  .nav::before {
+    content: "";
+    background-image: url(../img/hexagon-logo.png);
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 50px;
+    opacity: .4;
+  }
+  .nav::after {
+    content: "";
+    background-image: url(../img/hexagon-logo.png);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50px;
+    opacity: .4;
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+  }
   .nav-toggle {
     visibility: hidden;
   }
   .nav {
+    padding-left: 4rem;
     bottom: auto;
     -webkit-transform: translateX(0);
             transform: translateX(0);
