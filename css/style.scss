@@ -258,6 +258,55 @@ header {
     bottom: 6px;
 }
 
+@media (min-width: 600px) {
+    .nav-toggle {
+        visibility: hidden;
+    }
+
+    .nav {
+        bottom: auto;
+        height: 4%;
+        transform: translateX(0);
+
+        border-bottom: 4px solid var(--clr-accent);
+    }
+
+    .nav__list {
+        list-style: none;
+        display: flex;
+        flex-direction: initial;
+        justify-content: initial;
+    }
+
+    .nav__item {
+        margin-left: 2em;
+    }
+
+    .nav__link {
+        font-family: var(--ff-secondary);
+        font-weight: var(--fw-reg);
+        font-size: var(--fs-h3);
+    }
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2B2D2D;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555757;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5F6364;
+}
+
 /* Intro Section */
 
 .intro {
