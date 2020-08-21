@@ -37,6 +37,7 @@ html {
 }
 
 body {
+  overflow: visible;
   background: var(--clr-light);
   color: var(--clr-dark);
   margin: 0;
@@ -674,9 +675,140 @@ header {
   font-family: var(--ff-secondary);
 }
 
-.portfolio-item-individual p {
+.portfolio-item-individual__sub {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.portfolio-item-individual__gallery {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(480px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+}
+
+.view-site {
+  margin-right: 1em;
+}
+
+/* Slideshow */
+.slideshow {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+.slideshow:hover .slideshow__button {
+  opacity: 1;
+}
+
+.slideshow__item {
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  visibility: hidden;
+  -webkit-transition: .25s all ease-in-out;
+  transition: .25s all ease-in-out;
+  opacity: 0;
+}
+
+.slideshow__item.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.slideshow__button {
+  position: absolute;
+  top: 50%;
+  outline: none;
+  border: none;
+  background: var(--clr-dark);
+  color: var(--clr-light);
+  opacity: 0;
+  -webkit-transition: .25s all ease-in-out;
+  transition: .25s all ease-in-out;
+}
+
+.slideshow__button:hover {
+  background-color: var(--clr-accent);
+}
+
+.slideshow__button:active {
+  color: #c4735d;
+}
+
+.slideshow__button--right {
+  right: 0;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal__content {
+  position: fixed;
+}
+
+.modal__close-button {
+  position: fixed;
+  right: 1em;
+  top: 1em;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--clr-light);
+}
+
+.modal__close-button:hover {
+  color: var(--clr-accent);
+}
+
+.modal__close-button:focus {
+  outline: 3px solid var(--clr-accent);
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+/* Animation */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=style.css.map */

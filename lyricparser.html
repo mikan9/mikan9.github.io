@@ -48,9 +48,33 @@
   </section>
 
   <div class="portfolio-item-individual">
+    <img src="img/lyricparser-background.png" alt="">
     <p>Automatically fetch lyrics from different sources for music played with Spotify, Winamp, Google Play Music and
       Youtube.</p>
-    <img src="img/lyricparser-background.png" alt="">
+    <div class="portfolio-item-individual__gallery slideshow">
+      <img class="slideshow__item" src="img/lyricparser-00.png" alt="">
+      <img class="slideshow__item" src="img/lyricparser-01.png" alt="">
+      <img class="slideshow__item" src="img/lyricparser-02.png" alt="">
+      <button class="slideshow__button--left slideshow__button">
+        <i class="fas fa-angle-left fa-w-16 fa-3x"></i>
+      </button>
+      <button class="slideshow__button--right slideshow__button">
+        <i class="fas fa-angle-right fa-w-16 fa-3x"></i></button>
+    </div>
+    <div class="slideshow__modal modal">
+      <div class="slideshow__modal__content modal__content">
+        <img class="modal__content__img"></img>
+      </div>
+      <button class="modal__close-button btn">
+        <i class="far fa-times-circle fa-w-16 fa-3x"></i>
+      </button>
+    </div>
+    <div class="portfolio-item-individual__sub">
+      <p>Supports lyrics for Western and Japanese (incl. anime and touhou) music. With option for other categories
+        depending on Musicxmatch's catalog of lyrics. </p>
+      <a href="https://github.com/mikan9/LyricParser/" class="view-site btn">github<i
+          class="fas fa-external-link-alt"></i></a>
+    </div>
   </div>
 
   <a href="#home" class="top-button btn">top</a>
@@ -73,7 +97,7 @@
       </li>
     </ul>
   </footer>
-
+  <script src="js/jquery.min.js"></script>
   <script src="js/index.js"></script>
 </body>
 

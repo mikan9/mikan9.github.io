@@ -48,14 +48,36 @@
   </section>
 
   <div class="portfolio-item-individual">
+    <img src="img/sav-background.png" alt="">
     <p>Generates a bar graph visualization of an array, sorts it using one out of 10 predefined algorithms and updates
       the graph in realtime.</p>
-    <img src="img/sav-background.png" alt="">
-    <p>Predefined sorting algorithms: Selection Sort, Bubble Sort, Insertion Sort, Merge Sort, Quicksort (Lomuto
-      Partition Scheme), Quicksort (Hoare Partition Scheme), Heap Sort, Counting Sort [WIP], Radix Sort [WIP], Bucket
-      Sort [WIP]</p>
-    <a href="https://mikan9.github.io/sorting-visualizer/" class="view-site btn">view site<i
-        class="fas fa-external-link-alt"></i></a>
+    <div class="portfolio-item-individual__gallery slideshow">
+      <img class="slideshow__item" src="img/sav-00.png" alt="">
+      <img class="slideshow__item" src="img/sav-01.png" alt="">
+      <img class="slideshow__item" src="img/sav-02.png" alt="">
+      <button class="slideshow__button--left slideshow__button">
+        <i class="fas fa-angle-left fa-w-16 fa-3x"></i>
+      </button>
+      <button class="slideshow__button--right slideshow__button">
+        <i class="fas fa-angle-right fa-w-16 fa-3x"></i></button>
+    </div>
+    <div class="slideshow__modal modal">
+      <div class="slideshow__modal__content modal__content">
+        <img class="modal__content__img"></img>
+      </div>
+      <button class="modal__close-button btn">
+        <i class="far fa-times-circle fa-w-16 fa-3x"></i>
+      </button>
+    </div>
+    <div class="portfolio-item-individual__sub">
+      <p>Predefined sorting algorithms: Selection Sort, Bubble Sort, Insertion Sort, Merge Sort, Quicksort (Lomuto
+        Partition Scheme), Quicksort (Hoare Partition Scheme), Heap Sort, Counting Sort [WIP], Radix Sort [WIP], Bucket
+        Sort [WIP]</p>
+      <a href="https://mikan9.github.io/sorting-visualizer/" class="view-site btn">view site<i
+          class="fas fa-external-link-alt"></i></a>
+      <a href="https://github.com/mikan9/sorting-visualizer/" class="view-site btn">github<i
+          class="fas fa-external-link-alt"></i></a>
+    </div>
   </div>
 
   <a href="#home" class="top-button btn">top</a>
@@ -78,7 +100,7 @@
       </li>
     </ul>
   </footer>
-
+  <script src="js/jquery.min.js"></script>
   <script src="js/index.js"></script>
 </body>
 
