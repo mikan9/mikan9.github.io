@@ -84,7 +84,6 @@ $(".slideshow__item").click((e) => {
     const modal = $(".modal")[0];
     const modalContent = $(".modal__content");
     const imgSrc = $(slides[slideIndex]).attr("src");
-    console.log($(modalContent.children(0)));
     modalContent.children(0).attr("src", imgSrc);
     $(modal).css("display", "flex");
     $("body").addClass("modal-open");
