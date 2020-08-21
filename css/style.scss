@@ -380,9 +380,13 @@ header {
 
     .intro__img {
         grid-area: img;
-        min-width: 250px;
+        min-width: 150px;
         position: relative;
         z-index: 2;
+    }
+
+    .section__title--intro {
+        font-size: var(--fs-h2);
     }
 
     .section__subtitle--intro {
