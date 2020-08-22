@@ -32,7 +32,7 @@
         <li class="nav__item border-gradient-top">
           <a href="index.html#about" class="nav__link">About me</a>
         </li>
-        <li class="nav__item border-gradient-top">
+        <li class="nav__item border-gradient-top active">
           <a href="index.html#work" class="nav__link">Projects</a>
         </li>
       </ul>
@@ -47,39 +47,44 @@
     <img src="img/lyricparser-00.png" alt="" class="intro__img" />
   </section>
 
-  <div class="portfolio-item-individual">
-    <img src="img/lyricparser-background.png" alt="">
-    <p>Automatically fetch lyrics from different sources for music played with Spotify, Winamp, Google Play Music and
-      Youtube.</p>
-    <div class="portfolio-item-individual__gallery slideshow">
-      <img class="slideshow__item" src="img/lyricparser-00.png" alt="">
-      <img class="slideshow__item" src="img/lyricparser-01.png" alt="">
-      <img class="slideshow__item" src="img/lyricparser-02.png" alt="">
-      <button class="slideshow__button--left slideshow__button">
-        <i class="fas fa-angle-left fa-w-16 fa-3x"></i>
-      </button>
-      <button class="slideshow__button--right slideshow__button">
-        <i class="fas fa-angle-right fa-w-16 fa-3x"></i></button>
-    </div>
-    <div class="slideshow__modal modal">
-      <div class="slideshow__modal__content modal__content">
-        <img class="modal__content__img"></img>
+  <section class="portfolio-item-individual portfolio-item-individual--top">
+    <div class="portfolio-item-individual__content">
+      <img src="img/lyricparser-background.png" alt="">
+      <p>Automatically fetch lyrics from different sources for music played with Spotify, Winamp, Google Play Music and
+        Youtube.</p>
+      <div class="portfolio-item-individual__gallery slideshow">
+        <img class="slideshow__item" src="img/lyricparser-00.png" alt="">
+        <img class="slideshow__item" src="img/lyricparser-01.png" alt="">
+        <img class="slideshow__item" src="img/lyricparser-02.png" alt="">
+        <button class="slideshow__button--left slideshow__button">
+          <i class="fas fa-angle-left fa-w-16 fa-3x"></i>
+        </button>
+        <button class="slideshow__button--right slideshow__button">
+          <i class="fas fa-angle-right fa-w-16 fa-3x"></i></button>
       </div>
-      <button class="modal__close-button btn">
-        <i class="far fa-times-circle fa-w-16 fa-3x"></i>
-      </button>
     </div>
-    <div class="portfolio-item-individual__sub">
+  </section>
+
+  <section class="portfolio-item-individual portfolio-item-individual--bottom">
+    <div class="portfolio-item-individual__content">
       <p>Supports lyrics for Western and Japanese (incl. anime and touhou) music. With option for other categories
         depending on Musicxmatch's catalog of lyrics. </p>
       <a href="https://github.com/mikan9/LyricParser/" class="view-site btn">github<i
           class="fas fa-external-link-alt"></i></a>
     </div>
-  </div>
+  </section>
 
+  <div class="slideshow__modal modal">
+    <div class="slideshow__modal__content modal__content">
+      <img class="modal__content__img"></img>
+    </div>
+    <button class="modal__close-button btn">
+      <i class="far fa-times-circle fa-w-16 fa-3x"></i>
+    </button>
+  </div>
   <a href="#home" class="top-button btn">top</a>
 
-  <footer class="footer">
+  <footer class="footer border-gradient-top">
     <a href="mailto:ahlstrom.m.stephanie@gmail.com" class="footer__link">ahlstrom.m.stephanie@gmail.com</a>
     <ul class="social-list">
       <li class="social-list__item">

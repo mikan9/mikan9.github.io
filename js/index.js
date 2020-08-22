@@ -12,21 +12,24 @@ const nav = $(".nav__list"),
 let lastId = 0;
 
 $(".nav-toggle").click(() => {
-    document.body.classList.toggle('nav-open');
+    document.body.classList.toggle("nav-open");
 });
 
 $(".nav__link").click(() => {
-    document.body.classList.remove('nav-open');
+    document.body.classList.remove("nav-open");
 });
 
 $(window).scroll(() => {
     if (pageYOffset >= 200) {
-        topButton.addClass('top-button--show');
-        topButton.removeClass('top-button--hide');
+        topButton.addClass("top-button--show");
+        topButton.removeClass("top-button--hide");
     } else {
-        topButton.addClass('top-button--hide');
-        topButton.removeClass('top-button--show');
+        topButton.addClass("top-button--hide");
+        topButton.removeClass("top-button--show");
     }
+
+    if (window.location.pathname !== "/index.html")
+        return;
 
     const fromTop = $(this).scrollTop() + navHeight;
 
