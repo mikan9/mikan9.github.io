@@ -730,6 +730,10 @@ header {
 
 .modal__content {
     position: fixed;
+    max-height: 80%;
+    max-width: 80%;
+    display: flex;
+    justify-content: center;
 }
 
 .modal__close-button {

@@ -56,8 +56,9 @@ $(".slideshow__button--right").click(() => {
 });
 
 
-/* Slideshow */
+/* Slideshow & Modal */
 
+let isModalOpen = false;
 let slideIndex = 0;
 let slides = $(".slideshow__item");
 showSlide(slideIndex);
