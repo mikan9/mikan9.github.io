@@ -12,10 +12,12 @@
   --ff-secondary: 'PT Sans', monospace;
   --fw-reg: 300;
   --fw-bold: 900;
-  --clr-light: #D5D7CC;
+  --clr-light: #fff5e1;
+  --clr-light-secondary: #fdf3de;
   --clr-dark: #333333;
   --clr-darker: #111;
-  --clr-accent: #F69277;
+  --clr-accent: #E5957A;
+  --clr-accent-secondary: #80003A;
   --fs-h1: 3rem;
   --fs-h2: 2.25rem;
   --fs-h3: 1.25rem;
@@ -62,6 +64,19 @@ strong {
 :focus {
   outline: 3px solid var(--clr-accent);
   outline-offset: 2px;
+}
+
+/* Borders */
+.border-gradient-top {
+  border-top: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, var(--clr-accent-secondary), var(--clr-accent));
+}
+
+.border-gradient-bottom {
+  border-bottom: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, var(--clr-accent-secondary), var(--clr-accent));
 }
 
 /* Buttons */
@@ -190,9 +205,9 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -204,7 +219,25 @@ header {
   color: inherit;
   font-weight: var(--fw-bold);
   font-size: var(--fs-h2);
+  font-family: var(--ff-secondary);
   text-decoration: none;
+}
+
+.nav__item {
+  height: 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav__item:first-child {
+  border-top: 0;
 }
 
 .nav__link:hover {
@@ -311,7 +344,7 @@ header {
     bottom: auto;
     -webkit-transform: translateX(0);
             transform: translateX(0);
-    border-bottom: 5px solid var(--clr-accent);
+    border-width: 5px;
   }
   .nav__list {
     list-style: none;
@@ -328,6 +361,7 @@ header {
   }
   .nav__item {
     margin-left: 2em;
+    border-top: 0;
   }
   .nav__link {
     font-family: var(--ff-secondary);
@@ -664,9 +698,6 @@ header {
 
 .social-list__item {
   margin: 0 .5em;
-}
-
-.social-list__link {
   padding-right: .5em;
 }
 
