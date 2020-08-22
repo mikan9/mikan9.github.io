@@ -727,6 +727,8 @@ header {
 .slideshow__button {
   position: absolute;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   outline: none;
   border: none;
   background: var(--clr-dark);
