@@ -882,8 +882,8 @@ header {
 
 .modal__content {
   position: fixed;
-  max-height: 80%;
   max-width: 80%;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

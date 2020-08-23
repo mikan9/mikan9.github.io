@@ -85,13 +85,22 @@ function showSlide(n) {
 
 $(".slideshow__item").click((e) => {
     e.stopPropagation();
+    showModal();
+});
+
+$(".slideshow__item").keypress((e) => {
+    e.stopPropagation();
+    showModal();
+});
+
+function showModal() {
     const modal = $(".modal")[0];
     const modalContent = $(".modal__content");
     const imgSrc = $(slides[slideIndex]).attr("src");
     modalContent.children(0).attr("src", imgSrc);
     $(modal).css("display", "flex");
     $("body").addClass("modal-open");
-});
+}
 
 $(".modal__content").click((e) => {
     e.stopPropagation();

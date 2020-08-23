@@ -828,8 +828,8 @@ header {
 
 .modal__content {
     position: fixed;
-    max-height: 80%;
     max-width: 80%;
+    height: auto;
     display: flex;
     justify-content: center;
 }
