@@ -28,7 +28,6 @@ $(window).scroll(() => {
         topButton.removeClass("top-button--show");
     }
 
-    console.log(window.location.pathname);
     if (window.location.pathname !== "/index.html" &&
         window.location.pathname !== "/")
         return;
