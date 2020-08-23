@@ -28,7 +28,9 @@ $(window).scroll(() => {
         topButton.removeClass("top-button--show");
     }
 
-    if (window.location.pathname !== "/index.html")
+    console.log(window.location.pathname);
+    if (window.location.pathname !== "/index.html" &&
+        window.location.pathname !== "/")
         return;
 
     const fromTop = $(this).scrollTop() + navHeight;
