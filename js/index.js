@@ -1,3 +1,11 @@
+const DEBUG = true;
+
+function log(content) {
+    if (!DEBUG) return;
+
+    console.log(content);
+}
+
 /* Scroll */
 
 const topButton = $(".top-button");
@@ -10,13 +18,19 @@ const nav = $(".nav__list"),
     });
 
 let lastId = 0;
+let destination = "";
 
 $(".nav-toggle").click(() => {
     document.body.classList.toggle("nav-open");
 });
 
-$(".nav__link").click(() => {
+$(".nav__link").click((e) => {
     document.body.classList.remove("nav-open");
+    destination = e.currentTarget.hash;
+});
+
+$(".top-button").click((e) => {
+    destination = e.currentTarget.hash;
 });
 
 $(window).scroll(() => {
@@ -42,12 +56,16 @@ $(window).scroll(() => {
 
     cur = cur[cur.length - 1];
     let id = cur && cur.length ? cur[0].id : "";
+    if (destination === "#" + id)
+        destination = "";
 
     if (lastId !== id) {
         lastId = id;
         navItems
             .parent().removeClass("active")
             .end().filter("[href='#" + id + "']").parent().addClass("active");
+        if (destination.length === 0)
+            location.hash = id;
     }
 });
 
