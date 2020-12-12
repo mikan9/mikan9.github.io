@@ -6,79 +6,54 @@ function log(content) {
     console.log(content);
 }
 
-/* Scroll */
+/*  =========
+    nav
+    =========   */
 
 const topButton = $(".top-button");
-const nav = $(".nav__list"),
-    navHeight = nav.outerHeight() + 15,
-    navItems = nav.find("a"),
-    scrollItems = navItems.map(function () {
-        const item = $($(this).attr("href"));
-        if (item.length) return item;
-    });
-
-let lastId = 0;
 let destination = "";
 
-$(".nav-toggle").click(() => {
+$(".nav-toggle").on("click", () => {
     document.body.classList.toggle("nav-open");
 });
 
-$(".nav__link").click((e) => {
+$(".nav__link").on("click", (e) => {
     document.body.classList.remove("nav-open");
     destination = e.currentTarget.hash;
 });
 
-$(".top-button").click((e) => {
+$(".top-button").on("click", (e) => {
     destination = e.currentTarget.hash;
 });
 
-$(window).scroll(() => {
-    if (pageYOffset >= 200) {
-        topButton.addClass("top-button--show");
-        topButton.removeClass("top-button--hide");
-    } else {
-        topButton.addClass("top-button--hide");
-        topButton.removeClass("top-button--show");
-    }
+function updateHistory(hash) {
+    clearTimeout(updateHistory.timeout);
+    updateHistory.timeout = setTimeout(function () {
+        if (window.location.hash !== "")
+            if (location.hash !== "")
+                history.pushState({}, window.title, hash);
+            else
+                history.replaceState({}, window.title, hash);
+    }, 500);
+}
 
-    if (window.location.pathname !== "/index.html" &&
-        window.location.pathname !== "/")
-        return;
+window.addEventListener('hashchange', function (e) {
+    const sectionToShow = $(window.location.hash);
+    sectionToShow.scrollIntoView();
+    e.preventDefault();
+}, false);
 
-    const fromTop = $(this).scrollTop() + navHeight;
+/*  =========
+    slideshow & modal
+    =========   */
 
-    let cur = scrollItems.map(function () {
-        if ($(this).offset().top < fromTop) {
-            return this;
-        }
-    });
-
-    cur = cur[cur.length - 1];
-    let id = cur && cur.length ? cur[0].id : "";
-    if (destination === "#" + id)
-        destination = "";
-
-    if (lastId !== id) {
-        lastId = id;
-        navItems
-            .parent().removeClass("active")
-            .end().filter("[href='#" + id + "']").parent().addClass("active");
-        if (destination.length === 0)
-            location.hash = id;
-    }
-});
-
-$(".slideshow__button--left").click(() => {
+$(".slideshow__button--left").on("click", () => {
     nextSlide(-1);
 });
 
-$(".slideshow__button--right").click(() => {
+$(".slideshow__button--right").on("click", () => {
     nextSlide(1);
 });
-
-
-/* Slideshow & Modal */
 
 let isModalOpen = false;
 let slideIndex = 0;
@@ -100,14 +75,16 @@ function showSlide(n) {
     $(slides[slideIndex]).addClass("active");
 }
 
-/* Modal */
+/*  =========
+    modal
+    =========   */
 
-$(".slideshow__item").click((e) => {
+$(".slideshow__item").on("click", (e) => {
     e.stopPropagation();
     showModal();
 });
 
-$(".slideshow__item").keypress((e) => {
+$(".slideshow__item").on("keypress", (e) => {
     e.stopPropagation();
     showModal();
 });
@@ -121,11 +98,11 @@ function showModal() {
     $("body").addClass("modal-open");
 }
 
-$(".modal__content").click((e) => {
+$(".modal__content").on("click", (e) => {
     e.stopPropagation();
 });
 
-$("body").click((e) => {
+$("body").on("click", (e) => {
     e.stopPropagation();
     $(".modal").css("display", "none");
     $("body").removeClass("modal-open");
