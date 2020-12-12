@@ -1,11 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap');
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
+/* table of contents
+
+    1. global styles
+
+    2. typography
+    
+    3. layout
+
+    4. components
+
+    5. animations
+
+*/
+
+
+/*  ==========
+    variables
+    ============    */
 
 :root {
     --ff-primary: 'Source Sans Pro', sans-serif;
@@ -27,7 +40,7 @@
     --fs-h3: 1.25rem;
     --fs-body: 1rem;
 
-    --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, .25), 0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
+    --bs: 0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
 }
 
 @media (min-width: 800px) {
@@ -39,12 +52,24 @@
     }
 }
 
+/*  ==========
+    1. global styles
+    ============    */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
     overflow: visible;
+    overflow-x: hidden;
     background: var(--clr-light);
     color: var(--clr-dark);
     margin: 0;
@@ -53,25 +78,65 @@ body {
     line-height: 1.6;
 }
 
-section {
-    padding: 5em 2em;
+:focus {
+    outline: 3px solid var(--clr-accent);
+    outline-offset: 2px;
 }
 
-img {
-    display: block;
-    max-width: 100%;
+/*  ==========
+    2. typography
+    ============    */
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+    margin: 0;
+}
+
+h1 {
+    font-size: var(--fs-h1);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
 }
 
 strong {
     font-weight: var(--fw-bold);
 }
 
-:focus {
-    outline: 3px solid var(--clr-accent);
-    outline-offset: 2px;
+/*  ==========
+    3. layout
+    ============    */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
 }
 
-/* Borders */
+section {
+    padding: 5em 2em;
+}
+
+.footer {
+    background: var(--clr-darker);
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 2.5em 0;
+    font-size: var(--fs-h3);
+}
+
+/*  ==========
+    4. components
+    ============    */
+
+/*  4.1 borders   */
 
 .border-gradient-top {
     border-top: 1px solid;
@@ -91,7 +156,11 @@ strong {
             var(--clr-accent));
 }
 
-/* Buttons */
+/*  4.2 buttons     */
+
+button {
+    cursor: pointer;
+}
 
 .btn {
     display: inline-block;
@@ -120,25 +189,11 @@ strong {
     margin-left: 5px;
 }
 
-/* Typography */
+/*  4.3 images      */
 
-h1,
-h2,
-h3 {
-    line-height: 1;
-    margin: 0;
-}
-
-h1 {
-    font-size: var(--fs-h1);
-}
-
-h2 {
-    font-size: var(--fs-h2);
-}
-
-h3 {
-    font-size: var(--fs-h3);
+img {
+    display: block;
+    max-width: 100%;
 }
 
 .section__title {
@@ -171,14 +226,6 @@ h3 {
     color: var(--clr-accent);
     font-weight: var(--fw-bold);
     margin-bottom: 2em;
-}
-
-/* Header */
-
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 1em;
 }
 
 .logo {
@@ -327,7 +374,7 @@ header {
         padding-left: 4rem;
         bottom: auto;
         transform: translateX(0);
-        border-width: 5px;
+        border-width: 2px;
     }
 
     .nav__list {
@@ -400,7 +447,7 @@ header {
 }
 
 .intro__img {
-    box-shadow: var(--bs);
+    filter: drop-shadow(var(--bs));
 }
 
 @media (min-width: 600px) {
@@ -499,7 +546,7 @@ header {
     box-shadow: var(--bs);
 }
 
-.about-me::after {
+/* .about-me::after {
     content: "";
     position: absolute;
     left: 0;
@@ -508,7 +555,7 @@ header {
     height: 5em;
     background: var(--clr-dark);
     clip-path: polygon(50% 50%, 100% 0, 100% 100%, 0 100%, 0 0);
-}
+} */
 
 @media (min-width: 600px) {
     .about-me__content {
@@ -541,16 +588,16 @@ header {
     }
 }
 
-/* My Work Section */
+/* Projects Section */
 
-.my-work {
+.projects {
     position: relative;
     background-color: var(--clr-dark);
     color: var(--clr-light);
     text-align: center;
 }
 
-/* .my-work::after {
+/* .projects::after {
     content: "";
     position: absolute;
     bottom: -1px;
@@ -660,14 +707,6 @@ header {
 }
 
 /* Footer */
-
-.footer {
-    background: var(--clr-darker);
-    color: var(--clr-accent);
-    text-align: center;
-    padding: 2.5em 0;
-    font-size: var(--fs-h3);
-}
 
 .footer a {
     color: inherit;
@@ -864,7 +903,31 @@ header {
     overflow: hidden;
 }
 
-/* Animation */
+/*  ==========
+    5. animations
+    ============    */
+
+.from-left,
+.from-right {
+    opacity: 0;
+    transition:
+        opacity 150ms ease-in,
+        transform 300ms ease-in;
+}
+
+.from-left.appear,
+.from-right.appear {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.from-left {
+    transform: translateX(-50%);
+}
+
+.from-right {
+    transform: translateX(50%);
+}
 
 @keyframes fadeIn {
     from {
