@@ -470,7 +470,7 @@ img {
     margin-bottom: 0 auto;
     -webkit-column-gap: 1em;
             column-gap: 1em;
-        grid-template-areas: "img title" "img subtitle";
+        grid-template-areas: "img img title" "img img subtitle";
     -ms-grid-columns: min-content max-content;
         grid-template-columns: -webkit-min-content -webkit-max-content;
         grid-template-columns: min-content max-content;
@@ -479,8 +479,10 @@ img {
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
     -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
     grid-area: img;
     min-width: 150px;
+    max-width: 320px;
     position: relative;
     z-index: 2;
   }
@@ -491,7 +493,9 @@ img {
     -ms-flex-item-align: start;
         -ms-grid-row-align: start;
         align-self: start;
-    grid-column: -1 / 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-column: 1 / 7;
     -ms-grid-row: 2;
     grid-row: 2;
     text-align: right;
