@@ -677,11 +677,11 @@ img {
 }
 
 .portfolio__item:focus .portfolio__item__description, .portfolio__item:hover .portfolio__item__description {
-  top: 30%;
+  top: 25%;
 }
 
 .portfolio__item:focus .portfolio__item__button, .portfolio__item:hover .portfolio__item__button {
-  bottom: 30%;
+  bottom: 25%;
 }
 
 .portfolio__item:focus .portfolio__item__button:hover, .portfolio__item:hover .portfolio__item__button:hover {
