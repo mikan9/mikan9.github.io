@@ -43,6 +43,16 @@ window.addEventListener('hashchange', function (e) {
     e.preventDefault();
 }, false);
 
+$(window).on("scroll", () => {
+    if (pageYOffset >= 200) {
+        topButton.addClass("top-button--show");
+        topButton.removeClass("top-button--hide");
+    } else {
+        topButton.addClass("top-button--hide");
+        topButton.removeClass("top-button--show");
+    }
+});
+
 /*  =========
     slideshow & modal
     =========   */
