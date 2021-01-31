@@ -825,8 +825,8 @@ img {
 }
 
 .portfolio-item-individual__background {
-  -webkit-filter: brightness(50%);
-          filter: brightness(50%);
+  -webkit-filter: brightness(30%) contrast(70%);
+          filter: brightness(30%) contrast(70%);
 }
 
 .portfolio-item-individual__gallery {
