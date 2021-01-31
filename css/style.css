@@ -702,10 +702,7 @@ img {
 .portfolio__item__description,
 .portfolio__item__button {
   position: absolute;
-  left: 50%;
   opacity: 0;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
   -webkit-transition: all 250ms cubic-bezier(0.5, 0, 0.5, 1);
   transition: all 250ms cubic-bezier(0.5, 0, 0.5, 1);
 }
@@ -716,12 +713,21 @@ img {
       -ms-user-select: none;
           user-select: none;
   top: -10%;
+  left: 50%;
+  width: 80%;
+  opacity: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .portfolio__item__button {
   bottom: -10%;
+  left: 50%;
   padding-left: 1em;
   padding-right: 1em;
+  opacity: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 /* Top */
@@ -816,6 +822,11 @@ img {
   background: var(--clr-dark);
   color: var(--clr-light);
   padding: 6em 0;
+}
+
+.portfolio-item-individual__background {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
 }
 
 .portfolio-item-individual__gallery {

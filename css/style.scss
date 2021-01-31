@@ -666,10 +666,7 @@ img {
 .portfolio__item__description,
 .portfolio__item__button {
     position: absolute;
-    left: 50%;
     opacity: 0;
-
-    transform: translateX(-50%);
 
     transition: all 250ms cubic-bezier(.5, 0, .5, 1);
 }
@@ -677,12 +674,21 @@ img {
 .portfolio__item__description {
     user-select: none;
     top: -10%;
+    left: 50%;
+    width: 80%;
+    opacity: 0;
+
+    transform: translateX(-50%);
 }
 
 .portfolio__item__button {
     bottom: -10%;
+    left: 50%;
     padding-left: 1em;
     padding-right: 1em;
+    opacity: 0;
+
+    transform: translateX(-50%);
 }
 
 /* Top */
@@ -775,6 +781,10 @@ img {
     background: var(--clr-dark);
     color: var(--clr-light);
     padding: 6em 0;
+}
+
+.portfolio-item-individual__background{
+    filter: brightness(50%);
 }
 
 .portfolio-item-individual__gallery {
