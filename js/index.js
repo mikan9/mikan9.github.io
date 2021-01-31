@@ -38,7 +38,7 @@ function updateHistory(hash) {
 }
 
 window.addEventListener('hashchange', function (e) {
-    const sectionToShow = $(window.location.hash);
+    const sectionToShow = $(window.location.hash)[0];
     sectionToShow.scrollIntoView();
     e.preventDefault();
 }, false);
