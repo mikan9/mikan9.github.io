@@ -83,6 +83,7 @@ function showSlide(n) {
     });
 
     $(slides[slideIndex]).addClass("active");
+    setModalContent();
 }
 
 /*  =========
@@ -99,11 +100,14 @@ $(".slideshow__item").on("keypress", (e) => {
     showModal();
 });
 
-function showModal() {
-    const modal = $(".modal")[0];
+function setModalContent() {
     const modalContent = $(".modal__content");
     const imgSrc = $(slides[slideIndex]).attr("src");
     modalContent.children(0).attr("src", imgSrc);
+}
+
+function showModal() {
+    const modal = $(".modal")[0];
     $(modal).css("display", "flex");
     $("body").addClass("modal-open");
 }
