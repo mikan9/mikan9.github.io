@@ -854,7 +854,7 @@ img {
     // transform: translateY(0);
 }
 
-.slideshow__button {
+.modal__slideshow__button, .slideshow__button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -868,12 +868,16 @@ img {
     transition: .25s all ease-in-out;
 }
 
-.slideshow__button:hover {
+.modal__slideshow__button:hover, .slideshow__button:hover {
     background-color: var(--clr-accent);
 }
 
-.slideshow__button:active {
+.modal__slideshow__button:active, .slideshow__button:active {
     color: #c4735d;
+}
+
+.slideshow__button--left{
+    left: 0;
 }
 
 .slideshow__button--right {
@@ -899,12 +903,17 @@ img {
     align-items: center;
 }
 
+.modal__content:hover .modal__slideshow__button{
+    opacity: 1;
+}
+
 .modal__content {
     position: fixed;
     max-width: 80%;
     height: auto;
     display: flex;
     justify-content: center;
+    
 }
 
 .modal__close-button {
@@ -925,6 +934,10 @@ img {
 
 .modal__close-button:focus {
     outline: 3px solid var(--clr-accent);
+}
+
+.modal__slideshow__button{
+
 }
 
 .modal-open {
