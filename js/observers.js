@@ -36,7 +36,7 @@ sectionIntroObserver.observe(sectionIntro);
 
 const sectionServices = document.querySelector("#services");
 const sectionServicesOptions = {
-    threshold: .8,
+    threshold: 1,
     rootMargin: "0px 0px -200px 0px"
 };
 
