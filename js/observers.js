@@ -37,7 +37,7 @@ sectionIntroObserver.observe(sectionIntro);
 const sectionServices = document.querySelector("#services");
 const sectionServicesOptions = {
     threshold: .8,
-    rootMargin: "0px 0px -50px 0px"
+    rootMargin: "0px 0px -200px 0px"
 };
 
 const sectionServicesObserver = new IntersectionObserver(
@@ -50,7 +50,7 @@ sectionServicesObserver.observe(sectionServices);
 
 const sectionAbout = document.querySelector("#about");
 const sectionAboutOptions = {
-    threshold: .5,
+    threshold: .8,
     rootMargin: "0px 0px -200px 0px"
 };
 
@@ -64,7 +64,7 @@ sectionAboutObserver.observe(sectionAbout);
 
 const sectionProjects = document.querySelector("#projects");
 const sectionProjectsOptions = {
-    threshold: .8
+    threshold: 0.9
 };
 
 const sectionProjectsObserver = new IntersectionObserver(
