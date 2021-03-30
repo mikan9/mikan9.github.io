@@ -164,3 +164,9 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,windows,react,visualstudiocode
 .vscode/settings.json
+
+
+# SASS
+*.css.map
+*.sass.map
+*.scss.map
